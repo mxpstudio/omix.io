@@ -1,0 +1,437 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Variabili brand */
+  :root {
+    --color-orange: #FF971A;
+    --color-blue: #007DF7;
+    --color-white: #ffffff;
+    --color-black: #000000;
+  }
+
+
+/* import font */
+
+@font-face {
+    font-family: 'Sofia Pro';
+    src: url('../fonts/SofiaPro-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Sofia Pro';
+    src: url('../fonts/SofiaPro-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Sofia Pro';
+    src: url('../fonts/SofiaPro-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Sofia Pro';
+    src: url('../fonts/SofiaPro-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Sofia Pro';
+    src: url('../fonts/SofiaPro-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+
+  body {
+    font-family: 'Sofia Pro', sans-serif;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  /* HEADER */
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.3); /* vetro scuro */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); /* per Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    height: 21px;
+  }
+  
+  /* Menu toggle (2 linee) */
+  .menu-toggle {
+    width: 20px;
+    height: 10px;
+    background: none;
+    border: none;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .menu-toggle::before,
+  .menu-toggle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+  
+  .menu-toggle::before {
+    top: 0;
+  }
+  
+  .menu-toggle::after {
+    bottom: 0;
+  }
+  
+  /* HERO */
+  .hero {
+    background: url('../images/omix-hero-image.jpg') center center / cover no-repeat;
+    padding: 4rem 1.2rem 2.5rem;
+    text-align: center;
+    position: relative;
+
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.7rem;
+  }
+  
+  .hero-content h1 span {
+    color: #fbb040;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 1.2rem;
+  }
+  
+  .hero-content p strong {
+    color: #fff;
+  }
+  
+  .cta {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 0.75rem 1.6rem;
+    font-size: 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-content small {
+    display: block;
+    color: #aaa;
+    font-style: italic;
+    font-size: 0.85rem;
+  }
+
+/* Search Section */
+
+  .search-section {
+    padding: 1rem;
+  }
+  
+  .search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: var(--color-white);
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    outline: none;
+  }
+  
+  .search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .search-icon {
+    flex-shrink: 0;
+  } 
+
+/* Popular items */
+
+/* Sezione "Explore popular items" */
+.popular-items {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .popular-items h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+  }
+  
+  .items-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+  }
+  
+  .item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* uniforma l'altezza */
+    padding-bottom: 1rem;
+  }
+  
+  .item-card img {
+    width: 100%;
+    display: block;
+    margin-bottom: 0.5rem;
+    border: none;
+  }
+  
+  .item-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-white);
+  }
+  
+  .item-meta {
+    font-size: 0.8rem;
+    color: var(--color-orange);
+    margin: 0.1rem 0;
+  }
+  
+  .price {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--color-white);
+    margin-bottom: 0.6rem;
+  }
+  
+  .add-to-cart {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    width: 100%;
+    
+  }
+  
+  /* Sezione "Esplora per categoria" */
+/* Popular Items Section */
+.popular-items {
+    padding: 3rem 1.5rem 2rem;
+  }
+  
+  .popular-items h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .items-scroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+  }
+  
+  .item-card {
+    width: 160px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    text-align: center;
+  }
+  
+  .item-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .item-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  
+  .item-meta {
+    font-size: 0.85rem;
+    color: var(--color-orange);
+    margin-bottom: 0.4rem;
+  }
+  
+  .price {
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .add-to-cart {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border: none;
+    border-radius: 999px;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Categories Section */
+  .categories {
+    padding: 3rem 1.5rem 2rem;
+  }
+  
+  .categories h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .category-buttons button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    border-radius: 999px;
+    background-color: #2a2a2a;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+  }
+  
+  .category-buttons button.active {
+    background-color: var(--color-blue);
+  }
+
+
+/* footer */
+
+.footer {
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
+  }
+  
+  .footer-top {
+    background-color: #3d3d3d;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    padding: 3rem 1.5rem 5rem;
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .footer-bottom {
+    background-color: var(--color-blue);
+    text-align: center;
+    padding: 2rem 1rem 3rem;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    width: 100%;
+    z-index: 1;
+    position: relative; /* ← cambia qui */
+  }
+  
+  .footer.show-bottom .footer-bottom {
+    transform: translateY(0);
+  }
+
+
+
+/* Altri stili base */
+
+  .footer-section {
+    margin-bottom: 2rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+  }
+  
+  .footer-section ul,
+  .footer-legal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-section li,
+  .footer-legal li {
+    margin: 0.4rem 0;
+  }
+  
+  .footer-section a,
+  .footer-legal a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-social img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer {
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
+    min-height: 700px; /* aumenta da 300px a 600px per accomodare tutte le voci */
+  }
